@@ -1,9 +1,10 @@
 - name: Deploy Maven Artifact
-hosts: web
-tasks:
-  - name: Copy JAR file
-    copy:
-      src: /var/lib/jenkins/workspace/pgm6/myapp/target/myapp-1.0-SNAPSHOT.jar
-      dest: /opt/myapp-1.0-SNAPSHOT.jar
-  - name: Run application
-  shell: nohup java -jar /opt/myapp-1.0-SNAPSHOT.jar &
+  hosts: web
+  tasks:
+    - name: Copy JAR file
+      copy:
+        src: /var/lib/jenkins/workspace/pgm6/myapp/target/myapp-1.0-SNAPSHOT.jar
+        dest: /opt/myapp-1.0-SNAPSHOT.jar
+
+    - name: Run application
+      shell: nohup java -jar /opt/myapp-1.0-SNAPSHOT.jar &
